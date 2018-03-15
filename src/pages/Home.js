@@ -7,12 +7,10 @@ import { Auth } from '../actions';
 const Home = (props) => (
   <div>
     <h1>Home</h1>
-    <h2>
-      This is the Home page
-    </h2>
+    <h2>This is the Home page</h2>
     {props.token && <h3>{props.token}</h3>}
-    <button onClick={props.dispatchSetToken}>Set token</button>
-    <button onClick={props.dispatchClearToken}>Clear token</button>
+    <button onClick={props.dispatchLogin}>Login</button>
+    <button onClick={props.dispatchLogout}>Logout</button>
     <Helmet title="Home" />
   </div>
 );
@@ -23,8 +21,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  dispatchSetToken: bindActionCreators(Auth.setToken, dispatch),
-  dispatchClearToken: bindActionCreators(Auth.clearToken, dispatch),
+  dispatchLogin: bindActionCreators(Auth.login, dispatch),
+  dispatchLogout: bindActionCreators(Auth.logout, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

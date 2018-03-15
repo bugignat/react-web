@@ -1,8 +1,22 @@
 import actionIds from '../constants/actions';
 import * as api from './api';
 
-const setToken = () => dispatch => {
-  return api.getNumbers()
+const login = () => dispatch => {
+  return dispatch({
+    type: actionIds.SET_TOKEN,
+    token: 'sd76sd8-7sdf7sd8-sdf78s7df8',
+  });
+};
+
+const logout = () => dispatch => {
+  return dispatch({
+    type: actionIds.CLEAR_TOKEN,
+    token: 'sd76sd8-7sdf7sd8-sdf78s7df8',
+  });
+};
+
+const getProfile = () => dispatch => {
+  return api.getProfile()
     .then(response => {
       console.log(response);
       dispatch({
@@ -15,10 +29,4 @@ const setToken = () => dispatch => {
     });
 };
 
-const clearToken = () => {
-  return {
-    type: actionIds.CLEAR_TOKEN,
-  };
-};
-
-export default { setToken, clearToken };
+export default { login, logout, getProfile };
