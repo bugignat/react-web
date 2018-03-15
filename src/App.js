@@ -7,8 +7,6 @@ import { configureStore } from './store';
 import { NavBar } from './components/NavBar/NavBar';
 import { Home, About, Contacts, Terms, NotFound } from './pages/index';
 import { homepage } from '../package.json';
-import logo from './assets/icons/logo.svg';
-import './App.css';
 
 const { persistor, store } = configureStore();
 
@@ -19,10 +17,6 @@ const App = () => (
     <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter basename={basename}>
         <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React Baby</h1>
-          </header>
           <NavBar />
           <Switch>
             <Route exact path="/" component={Home} />

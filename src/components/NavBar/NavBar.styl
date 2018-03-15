@@ -1,2 +1,18 @@
 .container
-  background-color #ddd
+  display flex
+  align-items center
+  height 64px
+  padding 0 24px
+  background-color #fff
+  border-bottom 1px solid #ddd
+
+.link
+  padding 8px
+  opacity 0.5
+  color #000
+  text-decoration none
+  transition opacity 0.3s
+
+.linkActive
+  composes link
+  opacity 1
