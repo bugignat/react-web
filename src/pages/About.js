@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { NavLink } from 'react-router-dom';
 
-export const About = () => (
+const About = () => (
   <div>
     <h1>About</h1>
     <h2>
@@ -12,3 +12,5 @@ export const About = () => (
     <Helmet title="About" />
   </div>
 );
+
+export default About;

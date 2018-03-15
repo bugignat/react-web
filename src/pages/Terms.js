@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-export const Terms = () => (
+const Terms = () => (
   <div>
     <h1>Terms</h1>
     <h2>
@@ -10,3 +10,5 @@ export const Terms = () => (
     <Helmet title="Terms" />
   </div>
 );
+
+export default Terms;

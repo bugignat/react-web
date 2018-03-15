@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-export const NotFound = () => (
+const NotFound = () => (
   <div>
     <h1>404</h1>
     <h2>
@@ -10,3 +10,5 @@ export const NotFound = () => (
     <Helmet title="404" />
   </div>
 );
+
+export default NotFound;

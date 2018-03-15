@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-export const Contacts = () => (
+const Contacts = () => (
   <div>
     <h1>Contacts</h1>
     <h2>
@@ -10,3 +10,5 @@ export const Contacts = () => (
     <Helmet title="Contacts" />
   </div>
 );
+
+export default Contacts;
