@@ -1,6 +1,7 @@
 import React from 'react';
 import { hydrate, render } from 'react-dom';
 import { loadComponents, getState } from 'loadable-components';
+import registerServiceWorker from './registerServiceWorker';
 import App from './App';
 import './index.styl';
 window.snapSaveState = () => getState();
@@ -22,3 +23,5 @@ if (module.hot) {
     render(<App />, rootElement);
   });
 }
+
+registerServiceWorker();
