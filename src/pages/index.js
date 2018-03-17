@@ -1,9 +1,6 @@
-import loadable from 'loadable-components';
+import Home from './Home';
+import About from './About';
+import Contacts from './Contacts';
+import NotFound from './NotFound';
 
-const Home = loadable(() => import('./Home'));
-const About = loadable(() => import('./About'));
-const Contacts = loadable(() => import('./Contacts'));
-const Terms = loadable(() => import('./Terms'));
-const NotFound = loadable(() => import('./NotFound'));
-
-export { Home, About, Contacts, Terms, NotFound };
+export { Home, About, Contacts, NotFound };

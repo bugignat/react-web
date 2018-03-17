@@ -5,7 +5,7 @@ import { PersistGate } from 'redux-persist/es/integration/react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { configureStore } from './store';
 import { NavBar } from './components/NavBar/NavBar';
-import { Home, About, Contacts, Terms, NotFound } from './pages/index';
+import { Home, About, Contacts, NotFound } from './pages/index';
 import { homepage } from '../package.json';
 
 const { persistor, store } = configureStore();
@@ -24,7 +24,6 @@ const App = () => (
             <Route path="/contacts/" component={Contacts} />
             <Route component={NotFound} />
           </Switch>
-          <Route exact path="/about/terms/" component={Terms} />
         </div>
       </BrowserRouter>
     </PersistGate>

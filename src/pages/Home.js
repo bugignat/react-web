@@ -3,10 +3,9 @@ import Helmet from 'react-helmet';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Auth } from '../actions';
-import s from './Home.styl';
 
 const Home = (props) => (
-  <div className={s.container}>
+  <div>
     <h1>Home</h1>
     <h2>This is the Home page</h2>
     {props.token && <h3>{props.token}</h3>}
