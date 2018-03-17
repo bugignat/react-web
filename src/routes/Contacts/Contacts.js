@@ -1,12 +1,11 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import Page from '../../components/Page/Page';
+import s from './Contacts.styl';
 
 const Contacts = () => (
-  <div>
-    <h1>Contacts</h1>
-    <h2>
-      This is the Contacts page
-    </h2>
+  <Page title="Contacts">
+    <h1 className={s.title}>Contacts</h1>
+    <p>This is the Contacts page</p>
     <table>
       <tbody>
       <tr>
@@ -1161,8 +1160,7 @@ const Contacts = () => (
       </tr>
       </tbody>
     </table>
-    <Helmet title="Contacts" />
-  </div>
+  </Page>
 );
 
 export default Contacts;
