@@ -1,0 +1,34 @@
+.content
+  position absolute
+  top calc(50% - 150px)
+  left calc(50% - 150px)
+  width 300px
+  height 300px
+  padding 8px
+  background-color #fff
+  outline none
+  will-change transform
+  transform scale3d(0.9, 0.9, 0.9)
+  opacity 0
+  transition transform .4s, opacity .4s
+  &.contentAfterOpen
+    transform scale3d(1, 1, 1)
+    opacity 1
+  &.contentBeforeClose
+    transform scale3d(0.9, 0.9, 0.9)
+    opacity 0
+
+.overlay
+  z-index 1000
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+  background-color rgba(#000, 0)
+  transition background-color .4s
+  overflow hidden
+  &.overlayAfterOpen
+    background-color rgba(#000, .3)
+  &.overlayBeforeClose
+    background-color rgba(#000, 0)
