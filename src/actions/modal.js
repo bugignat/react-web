@@ -7,9 +7,11 @@ const openModal = (id) => dispatch => {
   });
 };
 
-const closeModal = () => dispatch => {
+const closeModal = () => (dispatch, getState) => {
+  const id = getState().modal.id;
   return dispatch({
     type: actionIds.CLOSE_MODAL,
+    id,
   });
 };
 

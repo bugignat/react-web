@@ -14,21 +14,6 @@ const { persistor, store } = configureStore();
 
 const basename = homepage && parse(homepage).pathname;
 
-const routes = [
-  {
-    title: 'Home',
-    path: '/',
-    exact: true,
-    component: Home,
-  },
-  {
-    title: 'Contacts',
-    path: '/contacts',
-    exact: true,
-    component: Contacts,
-  },
-];
-
 const App = () => (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
@@ -39,9 +24,8 @@ const App = () => (
           </div>
           <div className={s.content}>
             <Switch>
-              {routes.map(route => (
-                <Route key={route.title} {...route} />
-              ))}
+              <Route exact path="/" component={Home} />
+              <Route path="/contacts/" component={Contacts} />
               <Route component={NotFound} />
             </Switch>
           </div>

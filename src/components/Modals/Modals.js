@@ -21,6 +21,49 @@ const className = {
 };
 
 class Modals extends React.Component {
+
+  renderLogIn() {
+    if (this.props.modal.id !== 'login') {
+      return null;
+    }
+
+    return (
+      <div>
+        <div>Log In</div>
+        <div>
+          <input type="mail" placeholder="E-mail" />
+        </div>
+        <div>
+          <input type="password" placeholder="Password" />
+        </div>
+        <div>
+          <button>Submit</button>
+        </div>
+      </div>
+    );
+  }
+
+  renderSignUp() {
+    if (this.props.modal.id !== 'signup') {
+      return null;
+    }
+
+    return (
+      <div>
+        <div>Sign Up</div>
+        <div>
+          <input type="mail" placeholder="E-mail" />
+        </div>
+        <div>
+          <input type="password" placeholder="Password" />
+        </div>
+        <div>
+          <button>Submit</button>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     return (
       <ReactModal
@@ -29,15 +72,11 @@ class Modals extends React.Component {
         className={className.content}
         overlayClassName={className.overlay}
         closeTimeoutMS={400}
-        contentLabel="Example Modal"
+        contentLabel="Modal"
       >
-        <div>{this.props.modal.id || 'Modal'}</div>
-        <div>
-          <input type="tel" placeholder="Phone" />
-        </div>
-        <div>
-          <button onClick={this.props.dispatchCloseModal}>close</button>
-        </div>
+        <button className={s.close} onClick={this.props.dispatchCloseModal} />
+        {this.renderLogIn()}
+        {this.renderSignUp()}
       </ReactModal>
     );
   }

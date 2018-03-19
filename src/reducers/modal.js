@@ -14,7 +14,7 @@ export const modalReducer = (state = initialState, action) => {
       };
     case actionsIds.CLOSE_MODAL:
       return {
-        id: null,
+        id: action.id,
         isOpen: false,
       };
     default:
