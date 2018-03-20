@@ -1,4 +1,20 @@
 .container
+  z-index 1000
+  position fixed
+  top 0
+  left 0
+  right 0
+  height 64px
+  background-color rgba(#fff, 0.9)
+  transition: transform .3s ease-in-out;
+  &.unpinned {
+    transform: translate3d(0, -100%, 0);
+  }
+  &.pinned {
+    transform: translate3d(0, 0, 0);
+  }
+
+.wrapper
   display flex
   align-items center
   justify-content space-between

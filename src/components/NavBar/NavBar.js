@@ -4,19 +4,41 @@ import { bindActionCreators } from 'redux';
 import { NavLink, withRouter } from 'react-router-dom';
 import { Modal } from '../../actions';
 import s from './NavBar.styl';
+import Headroom from 'headroom.js';
 
 class NavBar extends React.Component {
+
+  headroom = null;
+
+  componentDidMount() {
+    this.headroom = new Headroom(this.nav, {
+      offset: 205,
+      tolerance: 5,
+      classes: {
+        pinned: s.pinned,
+        unpinned: s.unpinned,
+      }
+    });
+    this.headroom.init();
+  }
+
+  componentWillUnmount() {
+    this.headroom.destroy();
+  }
+
   render() {
     return (
-      <nav className={s.container}>
-        <div>
-          <div className={s.logo}>Logo</div>
-        </div>
-        <div>
-          <NavLink exact to="/" className={s.link} activeClassName={s.linkActive}>Home</NavLink>
-          <NavLink to="/contacts/" className={s.link} activeClassName={s.linkActive}>Contacts</NavLink>
-          <button onClick={() => this.props.dispatchOpenModal('login')}>Log In</button>
-          <button onClick={() => this.props.dispatchOpenModal('signup')}>Sign Up</button>
+      <nav className={s.container} ref={el => this.nav = el}>
+        <div className={s.wrapper}>
+          <div>
+            <div className={s.logo}>Logo</div>
+          </div>
+          <div>
+            <NavLink exact to="/" className={s.link} activeClassName={s.linkActive}>Home</NavLink>
+            <NavLink to="/contacts/" className={s.link} activeClassName={s.linkActive}>Contacts</NavLink>
+            <button onClick={() => this.props.dispatchOpenModal('login')}>Log In</button>
+            <button onClick={() => this.props.dispatchOpenModal('signup')}>Sign Up</button>
+          </div>
         </div>
       </nav>
     );

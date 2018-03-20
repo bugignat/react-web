@@ -93,8 +93,10 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "aos": "^2.2.0",
     "axios": "^0.18.0",
     "babel-plugin-react-css-modules": "^3.3.3",
+    "headroom.js": "^0.9.4",
     "keymirror": "^0.1.1",
     "react-helmet": "^5.2.0",
     "react-modal": "^3.3.2",
