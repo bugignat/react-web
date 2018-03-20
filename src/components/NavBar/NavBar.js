@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { NavLink, withRouter } from 'react-router-dom';
+import Headroom from 'headroom.js';
 import { Modal } from '../../actions';
 import s from './NavBar.styl';
-import Headroom from 'headroom.js';
 
 class NavBar extends React.Component {
 
@@ -12,8 +12,11 @@ class NavBar extends React.Component {
 
   componentDidMount() {
     this.headroom = new Headroom(this.nav, {
-      offset: 205,
-      tolerance: 5,
+      offset: 560,
+      tolerance : {
+        up : 0,
+        down : 0,
+      },
       classes: {
         pinned: s.pinned,
         unpinned: s.unpinned,

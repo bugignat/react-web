@@ -18,6 +18,7 @@ const className = {
     afterOpen: s.overlayAfterOpen,
     beforeClose: s.overlayBeforeClose,
   },
+  bodyOpen: s.bodyOpen
 };
 
 class Modals extends React.Component {
@@ -30,12 +31,22 @@ class Modals extends React.Component {
     return (
       <div>
         <div>Log In</div>
-        <div>
+        <label>
+          <div>Name</div>
+          <input type="text" placeholder="Name" />
+        </label>
+        <label>
+          <div>Phone</div>
+          <input type="tel" placeholder="Phone" />
+        </label>
+        <label>
+          <div>E-mail</div>
           <input type="mail" placeholder="E-mail" />
-        </div>
-        <div>
+        </label>
+        <label>
+          <div>Password</div>
           <input type="password" placeholder="Password" />
-        </div>
+        </label>
         <div>
           <button>Submit</button>
         </div>
@@ -51,12 +62,22 @@ class Modals extends React.Component {
     return (
       <div>
         <div>Sign Up</div>
-        <div>
+        <label>
+          <div>Name</div>
+          <input type="text" placeholder="Name" />
+        </label>
+        <label>
+          <div>Phone</div>
+          <input type="tel" placeholder="Phone" />
+        </label>
+        <label>
+          <div>E-mail</div>
           <input type="mail" placeholder="E-mail" />
-        </div>
-        <div>
+        </label>
+        <label>
+          <div>Password</div>
           <input type="password" placeholder="Password" />
-        </div>
+        </label>
         <div>
           <button>Submit</button>
         </div>
@@ -71,6 +92,7 @@ class Modals extends React.Component {
         onRequestClose={this.props.dispatchCloseModal}
         className={className.content}
         overlayClassName={className.overlay}
+        bodyOpenClassName={className.bodyOpen}
         closeTimeoutMS={400}
         contentLabel="Modal"
       >
