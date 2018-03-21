@@ -4,13 +4,14 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { configureStore } from './store';
 import NavBar from './components/NavBar/NavBar';
 import Modals from './components/Modals/Modals';
 import { Home, Contacts, NotFound } from './routes/index';
 import { homepage } from '../package.json';
 import s from './index.styl';
+import 'aos/dist/aos.css';
+import 'swiper/dist/css/swiper.min.css';
 
 const { persistor, store } = configureStore();
 
