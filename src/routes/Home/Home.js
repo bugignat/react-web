@@ -6,6 +6,9 @@ import { Auth } from '../../actions/index';
 import Page from '../../components/Page/Page';
 import s from './Home.styl';
 
+import mp4Video from '../../assets/videos/video.mp4';
+import webmVideo from '../../assets/videos/video.webm';
+
 class Home extends React.Component {
 
   swiper = null;
@@ -37,6 +40,10 @@ class Home extends React.Component {
         <div className={s.gallery} />
         <section className={s.section1}>
           <div className={s.sectionWrapper}>
+            <video className={s.video} loop muted playsInline autoPlay>
+              <source src={mp4Video} />
+              <source src={webmVideo} />
+            </video>
             <div className="swiper-container">
               <div className="swiper-wrapper">
                 <div className="swiper-slide">
